@@ -1,0 +1,35 @@
+unmanaged implementation in class zbp_test_cust_northwind unique;
+//strict ( 2 ); //Uncomment this line in order to enable strict mode 2. The strict mode has two variants (strict(1), strict(2)) and is prerequisite to be future proof regarding syntax and to be able to release your BO.
+
+define behavior for ZTEST_CUST_NORTHWIND //alias <alias_name>
+late numbering
+//lock master
+//authorization master ( instance )
+//etag master <field_name>
+{
+  //create;
+  update;
+  //delete;
+  field ( readonly ) product_id, category_id, product_name, quantity_per_unit, unit_price, units_in_stock, units_on_order, supplier_id;
+  association orders { create; }
+}
+
+define behavior for ZTEST_CUST_NORTHWIND_ORDER //alias <alias_name>
+//late numbering
+//lock dependent by _Product
+//authorization dependent by _Product
+//etag master <field_name>
+{
+//  create;
+  update;
+  delete;
+  field ( readonly ) product_id, order_id;
+  association _Product;
+
+  mapping for ztest_order
+  {
+    product_id = product_id;
+    order_id = order_id;
+    quantity = quantity;
+  }
+}

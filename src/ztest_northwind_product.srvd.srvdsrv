@@ -1,0 +1,5 @@
+@EndUserText.label: 'Northwind test'
+define service ZTEST_NORTHWIND_PRODUCT {
+  expose ZTEST_CUST_NORTHWIND;
+  expose ZTEST_CUST_NORTHWIND_ORDER;
+}
