@@ -116,7 +116,6 @@ CLASS lhc_ZTEST_CUST_NORTHWIND_ORDER IMPLEMENTATION.
       ) TO lhc_ZTEST_CUST_NORTHWIND=>mt_buffer_update.
 
       APPEND VALUE #(
-      %pid = ls_entity-%pid
       product_id = ls_entity-product_id
       order_id = ls_entity-order_id ) TO mapped-ztest_cust_northwind_order.
     ENDLOOP.
@@ -130,7 +129,6 @@ CLASS lhc_ZTEST_CUST_NORTHWIND_ORDER IMPLEMENTATION.
       ) TO lhc_ZTEST_CUST_NORTHWIND=>mt_buffer_delete.
 
       APPEND VALUE #(
-      %key = ls_key-%key
       product_id = ls_key-product_id
       order_id = ls_key-order_id ) TO mapped-ztest_cust_northwind_order.
     ENDLOOP.
