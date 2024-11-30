@@ -77,7 +77,7 @@ CLASS lhc_ZTEST_CUST_NORTHWIND IMPLEMENTATION.
       ) TO lhc_ZTEST_CUST_NORTHWIND=>mt_buffer_upd_prod.
 
       APPEND VALUE #(
-      product_id = ls_entity-product_id ) TO mapped-ztest_cust_northwind_order.
+      product_id = ls_entity-product_id ) TO mapped-ztest_cust_northwind.
 
     ENDLOOP.
   ENDMETHOD.
